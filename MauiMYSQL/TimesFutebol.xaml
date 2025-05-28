@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiMYSQL.TimesFutebol"
+             Title="Alunos">
+    <VerticalStackLayout>
+        <Label 
+            Text="TIMES DE FUTEBOL"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Label Text="Nome do Time" />
+        <Entry x:Name="txtTimeFutebol" Keyboard="Text" />
+
+        <Button Text="Adicionar Time" Clicked="btnAdicionar" />
+
+        <ListView x:Name="lstTimesFutebol" 
+                  HasUnevenRows="True"
+                  VerticalOptions="FillAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding nome}" 
+                                   FontSize="Medium" 
+                                   HorizontalOptions="Start" /> 
+                        </StackLayout>        
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+        <Label Text="" x:Name="lblStatus" VerticalOptions="End" HorizontalTextAlignment="Center" />
+
+
+    </VerticalStackLayout>
+</ContentPage>
