@@ -5,8 +5,7 @@
         public App()
         {
             InitializeComponent();
-
-            MainPage = new TimesFutebol();
+            MainPage = new NavigationPage(new PersonagensPage());
         }
     }
 }

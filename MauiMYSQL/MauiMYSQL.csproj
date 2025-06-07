@@ -57,6 +57,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Class1.cs" />
+	  <Compile Remove="Models\Class1.cs" />
+	  <Compile Remove="Models\Personagens.cs" />
+	  <Compile Remove="Models\Times.cs" />
+	  <Compile Remove="TimesFutebol.xaml.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Remove="TimesFutebol.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
@@ -64,13 +76,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="TimesFutebol.xaml.cs">
-	    <DependentUpon>TimesFutebol.xaml</DependentUpon>
-	  </Compile>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiXaml Update="TimesFutebol.xaml">
+	  <MauiXaml Update="PersonagensPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

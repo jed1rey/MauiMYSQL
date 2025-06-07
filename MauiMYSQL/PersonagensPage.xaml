@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiMYSQL.PersonagensPage"
+             Title="Personagens">
+    <ScrollView>
+        <VerticalStackLayout Padding="10">
+            <Label Text="Cadastro de Personagem" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center" />
+
+            <Entry x:Name="txtNomePersonagem" Placeholder="Nome" />
+            <Entry x:Name="txtRaca" Placeholder="Raça" />
+            <Entry x:Name="txtMoradia" Placeholder="Local de Moradia" />
+            <Entry x:Name="txtIdade" Placeholder="Idade" Keyboard="Numeric" />
+            <Entry x:Name="txtDescricaoPersonagem" Placeholder="Descrição" />
+            <Entry x:Name="txtUrl" Placeholder="URL da imagem" />
+
+            <Button Text="Adicionar Personagem" Clicked="btnAdicionarPersonagem" />
+
+            <ListView x:Name="lstPersonagens" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="5">
+                                <Label Text="{Binding Nome}" FontSize="18" />
+                                <Label Text="{Binding Raca}" FontSize="14" />
+                                <Label Text="{Binding LocalMoradia}" FontSize="14" />
+                                <Label Text="{Binding Idade}" FontSize="14" />
+                                <Label Text="{Binding Descricao}" FontSize="12" />
+                                <Label Text="{Binding Url}" FontSize="12" TextColor="Blue" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Label x:Name="lblStatus" Text="" HorizontalTextAlignment="Center" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
